@@ -8,6 +8,8 @@ jobs:
     steps:
       - name: checkout repo
         uses: actions/checkout@v2.3.4
+      - name: Install Requirements
+        run: pip3 install -r requirements.txt
       - name: Run a script
         run: python3 main.py
         

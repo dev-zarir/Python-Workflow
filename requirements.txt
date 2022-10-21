@@ -1,2 +1,4 @@
 flask
 flask-ngrok2
+waitress
+pyngrok

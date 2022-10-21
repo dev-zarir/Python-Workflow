@@ -1,25 +1,14 @@
 name: Python
 on:
   workflow_dispatch:
-runs-on: ubuntu-latest
+  
 jobs:
-  job1:
-    build: 
-      steps:
-        - name: checkout repo
-          uses: actions/checkout@v2.3.4
-        - name: Install Requirements
-          run: pip3 install -r requirements.txt
-        - name: Run a script
-          run: waitress-serve --port=80 main:app
-  job2:
-    build:
-      steps:
-        - name: Download
-          run: pip3 install pyngrok
-        - name: Install Ngrok
-          run: ngrok
-        - name: NGROK Auth
-          run: ngrok authtoken 2A4kC6bPdmqWbDFFXzUgT9Dlhg1_2BpCsMEMSJJgSH4EsnqAC
-        - name: Forward Ngrok
-          run: ngrok tcp 80
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout repo
+        uses: actions/checkout@v2.3.4
+      - name: Install Requirements
+        run: pip3 install -r requirements.txt
+      - name: Run a script
+        run: python3 main.py

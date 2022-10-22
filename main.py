@@ -23,5 +23,5 @@ conf.get_default().region = "ap"
 while True:
     tunnel=ngrok.connect(5000, "tcp")
     print(tunnel.public_url.replace("tcp://",""))
-    sleep(60)
+    sleep(30*60)
     ngrok.kill()

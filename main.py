@@ -6,7 +6,7 @@ conf.get_default().auth_token = "2A4kC6bPdmqWbDFFXzUgT9Dlhg1_2BpCsMEMSJJgSH4Esnq
 
 conf.get_default().region = "ap"
 
-tunnel=ngrok.connect(80, "tcp")
+tunnel=ngrok.connect(5000, "tcp")
 
 app=Flask(__name__)
 
@@ -15,4 +15,4 @@ def home():
     return "Hello World!"
 
 if __name__=="__main__":
-    app.run(port=80)
+    app.run(port=5000)
